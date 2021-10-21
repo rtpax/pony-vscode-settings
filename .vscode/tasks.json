@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "syntax check",
+            "group": "build",
+            "type": "shell",
+            "options": {
+                "cwd": "${fileDirname}",
+            },
+            "command": "ponyc --debug --pass=final",
+            "problemMatcher": "$ponyc-matcher",
+            "presentation": {
+                "reveal": "never"
+            }
+        },
+        {
+            "label": "build debug",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "type": "shell",
+            "options": {
+                "cwd": "${fileDirname}",
+            },
+            "command": "ponyc --debug -o ${workspaceFolder}/bin",
+            "problemMatcher": "$ponyc-matcher",
+            "presentation": {
+                "focus" : true
+            }
+        }
+    ]
+}
